@@ -23,6 +23,7 @@ def get_movies_sessions(session_date: str = None) -> QuerySet:
 
     return queryset
 
+
 def get_movie_session_by_id(movie_session_id: int) -> MovieSession:
     return MovieSession.objects.filter(id=movie_session_id).first()
 
@@ -52,5 +53,6 @@ def update_movie_session(
 
 def delete_movie_session_by_id(session_id: int) -> None:
     movie_session_to_delete = get_movie_session_by_id(session_id)
+
     if movie_session_to_delete:
         movie_session_to_delete.delete()
